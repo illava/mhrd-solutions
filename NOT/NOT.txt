@@ -7,8 +7,6 @@ Parts: myNAND NAND;
 // 2. wire them up
 Wires:
   in -> myNAND.in1,
-  in -> myNAND.in2,
-  myNAND.out -> out
-;
-
-
+  1 -> myNAND.in2,
+  // in -> myNAND.in2 is also OK.
+  myNAND.out -> out;
