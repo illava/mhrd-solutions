@@ -3,8 +3,6 @@ Outputs: out;
 
 // 1. specify the components you want to use here
 Parts:
-  and1 AND,
-  and2 AND,
   not1 NOT,
   not2 NOT,
   nand NAND
@@ -12,13 +10,9 @@ Parts:
 
 // 2. wire them up
 Wires:
-  in1 -> and1.in1,
-  1   -> and1.in2,
-         and1.out -> not1.in,
-                     not1.out -> nand.in1,
-                                 nand.out -> out,
-                     not2.out -> nand.in2,
-         and2.out -> not2.in,
-  1   -> and2.in2,
-  in2 -> and2.in1
+  in1 -> not1.in,
+         not1.out -> nand.in1,
+                     nand.out -> out,
+         not2.out -> nand.in2,
+  in2 -> not2.in,
   ;
