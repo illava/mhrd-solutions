@@ -12,9 +12,9 @@ Parts:
 Wires:
   in[1] -> or1.in1,
   in[2] -> or1.in2,
-           or1.out -> or2.in1,
-             in[3] -> or2.in2,
-                      or2.out -> or3.in1,
-                        in[4] -> or3.in2,
-                                 or3.out -> out
+           or1.out1 -> or3.in1,
+                       or3.out -> out,
+           or2.out2 -> or3.in2,
+  in[3] -> or2.in1,
+  in[4] -> or2.in2
   ;
