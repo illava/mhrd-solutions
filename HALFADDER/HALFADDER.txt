@@ -3,16 +3,19 @@ Outputs: out, carry;
 
 // 1. specify the components you want to use here
 Parts:
-  xor XOR,
-  and AND
-  ;
+  nand NAND,
+  or OR,
+  not NOT,
+  and AND;
 
 // 2. wire them up
 Wires:
-  in1 -> xor.in1,
-  in2 -> xor.in2,
-         xor.out -> out,
-  in1 -> and.in1,
-  in2 -> and.in2,
-         and.out -> carry
-  ;
+  in1 -> nand.in1,
+  in2 -> nand.in2,
+         nand.out -> not.in,
+                     not.out -> carry,
+                     and.out -> out,
+         nand.out -> and.in1,
+         or.out   -> and.in2,
+  in1 -> or.in1,
+  in2 -> or.in2;
